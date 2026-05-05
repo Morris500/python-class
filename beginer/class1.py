@@ -221,6 +221,12 @@ class Employee:
     def set_apply_rasie(self,boy):
         self.boy = boy
         return boy
+    @staticmethod
+    def is_working(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        else:
+            return True
 
 emp1 = Employee('Morris','Akunne',10000)
 emp2 = Employee('john','peter', 15000,)
@@ -232,6 +238,7 @@ print(emp2.raise_pay  )
 print(emp2.num_of_emps)
 print(name)
 # classmethod is a method or function that is bound to the class rather than it instance it is defined using @classmethod b4 the name of the method
+# static method is a method that belongs to class but do not use the instance or the class itself. it is define using using @staticmethod.
 
 emp_str1 = 'john-doe-70000'
 emp_str2 = 'steve-smith-30000'
@@ -240,3 +247,8 @@ emp_str3 = 'jane-doe-90000'
 new_emp = Employee.from_string(emp_str1)
 
 print(new_emp) 
+
+import datetime
+my_date = datetime.date(2016, 7, 10)
+
+print(Employee.is_working(my_date))
